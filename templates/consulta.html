@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Currículo</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h2>Detalhes do Currículo</h2>
+            </div>
+            <div class="card-body">
+                <p><strong>Nome:</strong> {{ curriculo[1] }}</p>
+                <p><strong>Telefone:</strong> {{ curriculo[2] or "Não informado" }}</p>
+                <p><strong>Email:</strong> {{ curriculo[3] }}</p>
+                <p><strong>Endereço Web:</strong> {{ curriculo[4] or "Não informado" }}</p>
+                <p><strong>Experiência Profissional:</strong> {{ curriculo[5] }}</p>
+            </div>
+            <div class="card-footer">
+                <a href="{{ url_for('index') }}" class="btn btn-secondary">Voltar à lista de currículos</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

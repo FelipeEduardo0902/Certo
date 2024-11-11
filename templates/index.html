@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Currículos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Lista de Currículos</h1>
+        <a href="{{ url_for('create_curriculo') }}" class="btn btn-primary mb-3">Cadastrar Novo Currículo</a>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for curriculo in curriculos %}
+                    <tr>
+                        <td>{{ curriculo[1] }}</td>
+                        <td>{{ curriculo[2] }}</td>
+                        <td><a href="{{ url_for('view_curriculo', id=curriculo[0]) }}" class="btn btn-info btn-sm">Visualizar</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
